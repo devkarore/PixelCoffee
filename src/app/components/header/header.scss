@@ -1,0 +1,34 @@
+@use '../../variabls' as *;
+
+#header{
+
+    background-image: url('/photo-1495474472287-4d71bcdd2085.avif');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+    color: $textBlanc;
+    font-family: $textPolice;
+
+    .title{
+        width: 50%;
+        padding: 5%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+
+        button{
+            background-color: $marronGlobal !important;
+            border-color: $marronGlobal !important;
+        }
+        button:hover{
+            background-color: $marronHover !important;
+            border-color: $marronHover !important;
+        }
+    }
+
+    
+}

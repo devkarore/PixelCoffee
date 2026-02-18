@@ -1,0 +1,21 @@
+@use '../../variabls' as *;
+
+
+form{
+    width: 50%;
+
+    button{
+            background-color: $marronGlobal !important;
+            border-color: $marronGlobal !important;
+        }
+        button:hover{
+            background-color: $marronHover !important;
+            border-color: $marronHover !important;
+        }
+        
+        .form-control::placeholder {
+            color: $marronGlobal !important;
+            opacity: 80%;
+        }
+
+}

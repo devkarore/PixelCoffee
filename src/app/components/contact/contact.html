@@ -1,0 +1,72 @@
+<div id="contact" class="py-5">
+  <div class="container py-5">
+    @if (monArticle(); as article) {
+    <h2 class="pb-2 text-center">{{ article.titre }}</h2>
+    <p class="pb-2 text-center">{{ article.contenu }}</p>
+    <form class="mx-auto" [formGroup]="formulaire" (ngSubmit)="soumettre()">
+      <div class="row g-3">
+
+        <!-- Prenom -->
+        <div class="col-12 col-md-6 mt-2 ps-5">
+          <input formControlName="first_name" class="form-control" type="text" id="prenom" name="prenom" placeholder="Prénom">
+            @if (formulaire.get('first_name')?.hasError('minlength') && formulaire.get('first_name')?.touched) {
+            <div class="text-danger small mt-1">Le prenom doit contenir au moins 3 caractères</div>
+            }            
+          </div>
+
+        <!-- Nom -->
+          <div class="col-12 col-md-6 mt-2 pe-5">
+            <input formControlName="last_name" class="form-control" type="text" id="nom" name="nom" placeholder="Nom" required>
+            @if (formulaire.get('last_name')?.hasError('required') && formulaire.get('last_name')?.touched) {
+                  <div class="text-danger small mt-1">Le nom est requis</div>
+                   }
+                  @if (formulaire.get('last_name')?.hasError('minlength') && formulaire.get('last_name')?.touched) {
+                  <div class="text-danger small mt-1">Le nom doit contenir au moins 3 caractères</div>
+                  }
+            </div>
+
+          <!-- Email -->
+            <div class="col-12 col-md-6 mt-2 ps-5">
+                  <input formControlName="email" class="form-control" type="email" id="email" name="email" placeholder="Adresse e-mail" required>
+                  @if (formulaire.get('email')?.hasError('required') && formulaire.get('email')?.touched) {
+                    <div class="text-danger small mt-1">L'e-mail' est requis</div>
+                    }
+                    @if (formulaire.get('email')?.hasError('minlength') && formulaire.get('email')?.touched) {
+                    <div class="text-danger small mt-1">L'e-mail doit être valide.</div>
+                    }
+              </div>
+
+            <!-- Entreprise -->
+              <div class="col-12 col-md-6 mt-2 pe-5">
+                    <input formControlName="company" class="form-control" type="text" id="entreprise" name="entreprise" placeholder="Entreprise">
+                      @if (formulaire.get('company')?.hasError('minlength') && formulaire.get('company')?.touched) {
+                      <div class="text-danger small mt-1">Le nom de l'entreprise' doit contenir au moins 3 caractères</div>
+                      }
+                </div>
+
+              <!-- Message -->
+                <div class="col-12">
+                  <textarea formControlName="message" id="message" name="message" placeholder="Votre message" class="form-control" rows="3" required></textarea>
+                        @if (formulaire.get('message')?.hasError('required') && formulaire.get('message')?.touched) {
+                          <div class="text-danger small mt-1">Un message est requis</div>
+                        }
+                        @if (formulaire.get('message')?.hasError('minlength') && formulaire.get('message')?.touched) {
+                          <div class="text-danger small mt-1">Le message doit contenir au moins 10 caractères</div>
+                        }
+                  </div>
+
+              <!-- Bouton envoyer -->
+        <div class="col-12 d-grid">
+          <button type="submit" id="envoyer" name="envoyer" class="btn btn-secondary" [disabled]="formulaire.invalid">
+            Envoyer votre message
+          </button>
+        </div>
+      </div>
+    </form>
+      } 
+      @if (isFormulaireSent()) {
+      <p class="text-success text-center mt-3">Votre message a bien été envoyé.</p>
+      }
+    
+  </div>
+</div>

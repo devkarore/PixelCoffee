@@ -1,0 +1,19 @@
+@use '../../variabls' as *;
+
+
+#products{
+    background-color: $marronGlobal;
+    h2 {
+        color: $textBlanc;
+    }
+
+    .card{
+        width: 100%;
+        border: none;
+        img{
+            max-height: 160px;
+            object-fit: cover;
+        }
+        
+    }
+}

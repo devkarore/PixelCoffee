@@ -1,0 +1,20 @@
+<div id="APropos" class="py-5">
+    <div class="container py-5">
+        <div class="row d-flex">
+            @if (monArticle(); as article) {
+                <div class="col d-flex align-items-center me-3">
+                    <div class="d-flex flex-column">
+                        <h2 class="fw-bold">{{ article.titre }}</h2>
+                        <p>{{ article.contenu }}</p>
+
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <img class="imgAPropos shadow img-fluid w-100" [src]="article.photoUrl" >
+                </div>
+                }
+        </div>
+
+    </div>
+</div>
+
