@@ -7,3 +7,10 @@
 H5{
     padding: 2.5%;
 }
+
+@media screen and (max-width: 640px) {
+    H5{
+
+    padding: 20%;
+}  
+}

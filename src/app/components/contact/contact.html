@@ -2,12 +2,12 @@
   <div class="container py-5">
     @if (monArticle(); as article) {
     <h2 class="pb-2 text-center">{{ article.titre }}</h2>
-    <p class="pb-2 text-center">{{ article.contenu }}</p>
+    <p class="contenu pb-2 text-center">{{ article.contenu }}</p>
     <form class="mx-auto" [formGroup]="formulaire" (ngSubmit)="soumettre()">
       <div class="row g-3">
 
         <!-- Prenom -->
-        <div class="col-12 col-md-6 mt-2 ps-5">
+        <div class="col-12 col-md-6 mt-md-2 ps-md-5">
           <input formControlName="first_name" class="form-control" type="text" id="prenom" name="prenom" placeholder="Prénom">
             @if (formulaire.get('first_name')?.hasError('minlength') && formulaire.get('first_name')?.touched) {
             <div class="text-danger small mt-1">Le prenom doit contenir au moins 3 caractères</div>
@@ -15,7 +15,7 @@
           </div>
 
         <!-- Nom -->
-          <div class="col-12 col-md-6 mt-2 pe-5">
+          <div class="col-12 col-md-6 mt-md-2 pe-md-5">
             <input formControlName="last_name" class="form-control" type="text" id="nom" name="nom" placeholder="Nom" required>
             @if (formulaire.get('last_name')?.hasError('required') && formulaire.get('last_name')?.touched) {
                   <div class="text-danger small mt-1">Le nom est requis</div>
@@ -26,7 +26,7 @@
             </div>
 
           <!-- Email -->
-            <div class="col-12 col-md-6 mt-2 ps-5">
+            <div class="col-12 col-md-6 mt-md-2 ps-md-5">
                   <input formControlName="email" class="form-control" type="email" id="email" name="email" placeholder="Adresse e-mail" required>
                   @if (formulaire.get('email')?.hasError('required') && formulaire.get('email')?.touched) {
                     <div class="text-danger small mt-1">L'e-mail' est requis</div>
@@ -37,7 +37,7 @@
               </div>
 
             <!-- Entreprise -->
-              <div class="col-12 col-md-6 mt-2 pe-5">
+              <div class="col-12 col-md-6 mt-md-2 pe-md-5">
                     <input formControlName="company" class="form-control" type="text" id="entreprise" name="entreprise" placeholder="Entreprise">
                       @if (formulaire.get('company')?.hasError('minlength') && formulaire.get('company')?.touched) {
                       <div class="text-danger small mt-1">Le nom de l'entreprise' doit contenir au moins 3 caractères</div>

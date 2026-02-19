@@ -1,5 +1,9 @@
 @use '../../variabls' as *;
 
+.contenu{
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 form{
     width: 50%;
@@ -18,4 +22,10 @@ form{
             opacity: 80%;
         }
 
+}
+
+@media screen and (max-width: 640px) {
+    form{
+        width: 80%;   
+    }    
 }
