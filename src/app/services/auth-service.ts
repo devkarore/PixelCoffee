@@ -14,7 +14,7 @@ export class AuthService {
     // token, on décrit simplement ce qui va se passer
   // Et tap() se déclenche normalement sans permettre la modification de response, ce qui le
   // différencie de next()
-  return this.http.get<{ token: string }>('http://localhost:8080/jwt-login.php').pipe(
+  return this.http.get<{ token: string }>('http://api-pixel-coffee.osengo-tpdwwm-moulins.fr/jwt-login.php').pipe(
       tap(response => {
         localStorage.setItem('api_jwt', response.token);
       })
